@@ -93,3 +93,9 @@ nnoremap ;s :call SplitString()<cr>
 
 "join sql/print/etc
 nnoremap ;j JF"df"
+
+"turn off autocomments
+nnoremap ;an :set formatoptions-=cro<cr>
+
+"turn on autocomments
+nnoremap ;ay :set formatoptions+=cro<cr>
