@@ -12,7 +12,7 @@ set scrolloff=10
 syn sync fromstart
 
 "pathogen
-execute pathogen#infect()
+execute pathogen#infect('~/dotfiles/bundle/{}')
 syntax on
 filetype plugin indent on
 let b:match_ignorecase=1 "matchit.vim ignores case
