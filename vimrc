@@ -20,6 +20,8 @@ let b:match_ignorecase=1 "matchit.vim ignores case
 "fugitive
 set diffopt+=vertical
 
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
 "comment out line containing given string
 "i.e. ':CO example' comments out lines containing 'example'
 function CommentOut(string)
@@ -93,9 +95,3 @@ nnoremap ;s :call SplitString()<cr>
 
 "join sql/print/etc
 nnoremap ;j JF"df"
-
-"turn off autocomments
-nnoremap ;an :set formatoptions-=cro<cr>
-
-"turn on autocomments
-nnoremap ;ay :set formatoptions+=cro<cr>
