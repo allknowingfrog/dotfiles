@@ -55,6 +55,9 @@ command TWS %s/\s\+$//
 "return from insert mode to normal
 inoremap ii <ESC>
 
+"map ; to ;;
+nnoremap ;; ;
+
 "open and return to normal
 nnoremap ;o o<ESC>
 
