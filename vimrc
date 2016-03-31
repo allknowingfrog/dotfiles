@@ -53,7 +53,8 @@ command DosToUnix update | e ++ff=dos | setlocal ff=unix | w
 command TWS %s/\s\+$//
 
 "return from insert mode to normal
-inoremap ii <ESC>
+"inoremap ii <ESC>
+inoremap ;i <ESC>
 
 "map ; to ;;
 nnoremap ;; ;
@@ -75,6 +76,9 @@ nnoremap ;c :,s/[A-Za-z]/\/\/&<cr>
 
 "find task
 nnoremap ;t /\$task == ['"]
+
+"find function
+nnoremap ;f /function
 
 "new script
 nnoremap ;nj i?><cr><SCRIPT type='text/javascript'><cr><cr></SCRIPT><cr><?<ESC>kki
