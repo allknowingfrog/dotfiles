@@ -69,7 +69,7 @@ nnoremap ;c :,s/[A-Za-z]/\/\/&<cr>
 nnoremap ;t /\$task == ['"]
 
 "find function
-nnoremap ;f /function
+nnoremap ;f /function 
 
 "new script
 nnoremap ;nj i?><cr><SCRIPT type='text/javascript'><cr><cr></SCRIPT><cr><?<ESC>kki
