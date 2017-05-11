@@ -13,6 +13,10 @@ syn sync fromstart
 
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+augroup filetypedetect
+    au BufRead,BufNewFile *.twig set syntax=html
+augroup END
+
 "comment out line containing given string
 "i.e. ':CO example' comments out lines containing 'example'
 function CommentOut(string)
@@ -42,6 +46,9 @@ command DosToUnix update | e ++ff=dos | setlocal ff=unix | w
 
 "remove trailing whitespace
 command TWS %s/\s\+$//
+
+"clump array assignments into array declaration lines
+command Arr '<,'>s/\$[^[]*\[\('[^']*'\)\] = \([^;]*\);*/\1 => \2,/
 
 "return from insert mode to normal
 "inoremap ii <ESC>
