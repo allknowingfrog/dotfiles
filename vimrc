@@ -13,10 +13,6 @@ syn sync fromstart
 
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-augroup filetypedetect
-    au BufRead,BufNewFile *.twig set syntax=html
-augroup END
-
 "fix inconsistent Y behavior
 nnoremap Y y$
 
