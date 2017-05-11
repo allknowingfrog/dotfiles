@@ -17,6 +17,9 @@ augroup filetypedetect
     au BufRead,BufNewFile *.twig set syntax=html
 augroup END
 
+"fix inconsistent Y behavior
+nnoremap Y y$
+
 "comment out line containing given string
 "i.e. ':CO example' comments out lines containing 'example'
 function CommentOut(string)
