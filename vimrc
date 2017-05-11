@@ -20,39 +20,6 @@ augroup END
 "fix inconsistent Y behavior
 nnoremap Y y$
 
-"comment out line containing given string
-"i.e. ':CO example' comments out lines containing 'example'
-function CommentOut(string)
-    exe '%s/.*\(\/\)\@<!' . a:string . '.*/\/\/&/gc'
-endfunction
-
-command -nargs=1 CO call CommentOut(<q-args>)
-
-"remove given string
-"i.e. ':Remove example' deletes all instances of 'example'
-function Remove(string)
-    exe '%s/' . a:string . '//gc'
-endfunction
-
-command -nargs=1 Remove call Remove(<q-args>)
-
-"search on contents of yank register, replace with given string
-"i.e. ':Remove example' deletes all instances of 'example'
-function YankRep(string)
-    exe '%s/command/' . a:string . '/gc'
-endfunction
-
-command -nargs=1 YankRep call YankRep(<q-args>)
-
-"convert dos linebreaks to unix
-command DosToUnix update | e ++ff=dos | setlocal ff=unix | w
-
-"remove trailing whitespace
-command TWS %s/\s\+$//
-
-"clump array assignments into array declaration lines
-command Arr '<,'>s/\$[^[]*\[\('[^']*'\)\] = \([^;]*\);*/\1 => \2,/
-
 "return from insert mode to normal
 "inoremap ii <ESC>
 inoremap ;i <ESC>
@@ -66,14 +33,8 @@ nnoremap ;o o<ESC>
 "push 0 register (last yank)
 nnoremap ;p "0p
 
-"new print statement
-nnoremap ;np oprint("");<ESC>hhi
-
-"new sql statement
-nnoremap ;ns o$sql .= "";<ESC>hi
-
-"comment out current line
-nnoremap ;c :,s/[A-Za-z]/\/\/&<cr> 
+"remove trailing whitespace
+command TWS %s/\s\+$//
 
 "find task
 nnoremap ;t /\$task == ['"]
@@ -81,11 +42,8 @@ nnoremap ;t /\$task == ['"]
 "find function
 nnoremap ;f /function 
 
-"new script
-nnoremap ;nj i?><cr><SCRIPT type='text/javascript'><cr><cr></SCRIPT><cr><?<ESC>kki
-
-"wrap line in print statement
-nnoremap ;wp :s/\([^ ][^;]*\)/print("\1");<cr>
+"new sql statement
+nnoremap ;ns o$sql .= "";<ESC>hi
 
 "split sql/print/etc
 function SplitString()
