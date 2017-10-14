@@ -1,6 +1,6 @@
 set nohlsearch
 set incsearch
-set ts=4
+set tabstop=4
 set shiftwidth=4
 set expandtab
 set showmode
@@ -8,6 +8,8 @@ set autoindent
 set smartindent
 set lazyredraw
 set scrolloff=10
+
+filetype plugin on
 
 syn sync fromstart
 
