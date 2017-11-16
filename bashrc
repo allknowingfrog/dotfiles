@@ -1,5 +1,6 @@
 export GREP_OPTIONS='--color=always'
-export EDITOR=vim
+export VISUAL=vim
+export EDITOR="$VISUAL"
 
 function dcx {
     if [ $# -eq 2 ]; then
@@ -19,5 +20,9 @@ function bench {
 
 alias vi='vim'
 alias repo='cd $(git rev-parse --show-toplevel)'
+
+export PATH="/usr/local/lib/node/bin:$PATH"
+
+export PATH="$HOME/.cargo/bin:$PATH"
 
 export PATH="$PATH:~/.local/bin"
