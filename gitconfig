@@ -1,0 +1,11 @@
+[alias]
+    sync = !git checkout master && git fetch -p && git merge --ff-only origin/master
+[branch]
+    autosetupmerge = always
+[core]
+	editor = vim
+[push]
+	default = matching
+[user]
+	email = jbohling@sycamoreleaf.com
+	name = Jeremiah A. Bohling
