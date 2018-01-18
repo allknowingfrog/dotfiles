@@ -1,4 +1,5 @@
-export GREP_OPTIONS='--color=always'
+set -o vi
+
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
