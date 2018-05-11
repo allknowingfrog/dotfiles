@@ -9,6 +9,9 @@ set smartindent
 set lazyredraw
 set scrolloff=10
 
+let &colorcolumn=join(range(81,999),",")
+highlight ColorColumn ctermbg=235
+
 filetype plugin on
 
 syn sync fromstart
