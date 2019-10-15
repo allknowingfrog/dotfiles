@@ -9,6 +9,9 @@ set smartindent
 set lazyredraw
 set scrolloff=10
 
+"skip smartindent in python files
+"au! FileType python setl nosmartindent
+
 let &colorcolumn=join(range(81,999),",")
 highlight ColorColumn ctermbg=235
 
