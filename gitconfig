@@ -1,11 +1,14 @@
 [alias]
-    sync = !git checkout master && git fetch -p && git merge --ff-only origin/master
+  sync = !git checkout master && git fetch -p && git merge --ff-only origin/master
+  changes = !git diff $(git merge-base HEAD master)
+  shove = !git push origin $(git rev-parse --abbrev-ref HEAD)
 [branch]
-    autosetupmerge = always
+   autosetupmerge = always
 [core]
-	editor = vim
+  editor = vim
+  excludesfile = /Users/jeremiah/.gitignore
 [push]
-	default = matching
+  default = matching
 [user]
-	email = jeremiah.bohling@gmail.com
-	name = Jeremiah A. Bohling
+  email = jeremiah.bohling@gmail.com
+  name = Jeremiah A. Bohling

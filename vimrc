@@ -8,6 +8,7 @@ set autoindent
 set smartindent
 set lazyredraw
 set scrolloff=10
+set ruler
 
 "skip smartindent in python files
 "au! FileType python setl nosmartindent
@@ -16,6 +17,7 @@ let &colorcolumn=join(range(81,999),",")
 highlight ColorColumn ctermbg=235
 
 filetype plugin on
+filetype indent on
 
 syn sync fromstart
 
