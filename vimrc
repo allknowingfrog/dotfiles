@@ -23,12 +23,12 @@ syn sync fromstart
 
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+"default split behavior is odd
+set splitbelow
+set splitright
+
 "fix inconsistent Y behavior
 nnoremap Y y$
-
-"return from insert mode to normal
-"inoremap ii <ESC>
-inoremap ;i <ESC>
 
 "map ; to ;;
 nnoremap ;; ;
@@ -37,33 +37,28 @@ nnoremap ;; ;
 nnoremap ;o o<ESC>
 
 "push 0 register (last yank)
-nnoremap ;p "0p
+nnoremap ;0 "0p
 
 "remove trailing whitespace
 command TWS %s/\s\+$//
 
-"find task
-nnoremap ;t /\$task == ['"]
+"buffer shortcuts
+nnoremap ;p :bp<ESC>
+nnoremap ;n :bn<ESC>
+nnoremap ;b :buffers<ESC>
 
-"find function
-nnoremap ;f /function 
-
-"new sql statement
-nnoremap ;ns o$sql .= "";<ESC>hi
-
-"split sql/print/etc
-function SplitString()
-    let col = getpos('.')
-    let pos = col[2] + 1
-    let line = getline('.')
-    if match(line, 'print(') > -1
-        execute ':s/\(\(^\s*\).*\)\%<'.pos.'c/\1");\r\2print("/'
-    else
-        execute ':s/\(\(^\s*\$\w\+\).*\)\%<'.pos.'c/\1";\r\2 .= "/'
-    endif
-endfunction
-
-nnoremap ;s :call SplitString()<cr>
-
-"join sql/print/etc
-nnoremap ;j JF"df"
+"window shortcuts
+nnoremap ;v <C-w>v
+nnoremap ;s <C-w>s
+nnoremap ;w <C-w>w
+nnoremap ;W <C-w>W
+nnoremap ;h <C-w>h
+nnoremap ;l <C-w>l
+nnoremap ;k <C-w>k
+nnoremap ;j <C-w>j
+nnoremap ;q <C-w>q
+nnoremap ;> <C-w>>
+nnoremap ;< <C-w><
+nnoremap ;+ <C-w>+
+nnoremap ;- <C-w>-
+nnoremap ;= <C-w>=
