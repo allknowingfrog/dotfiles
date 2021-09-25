@@ -6,7 +6,7 @@
    autosetupmerge = always
 [core]
   editor = vim
-  excludesfile = /Users/jeremiah/.gitignore
+  excludesfile = /home/jeremiah/.gitignore
 [push]
   default = matching
 [user]

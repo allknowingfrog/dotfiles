@@ -23,7 +23,6 @@ function rsed {
     find $1 -type f -print0 | xargs -0 sed -i $2
 }
 
-alias vi='vim'
 alias repo='cd $(git rev-parse --show-toplevel)'
 
 export PATH="/usr/local/lib/node/bin:$PATH"
