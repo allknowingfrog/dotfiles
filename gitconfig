@@ -7,6 +7,10 @@
 [core]
   editor = vim
   excludesfile = /home/jeremiah/.gitignore
+[init]
+  defaultBranch = master
+[pull]
+  rebase = false
 [push]
   default = matching
 [user]
