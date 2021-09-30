@@ -6,7 +6,7 @@
    autosetupmerge = always
 [core]
   editor = vim
-  excludesfile = /home/jeremiah/.gitignore
+  excludesfile = ~/.gitignore
 [init]
   defaultBranch = master
 [pull]
