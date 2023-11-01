@@ -1,7 +1,7 @@
 [alias]
-  sync = !git checkout master && git fetch -p && git merge --ff-only origin/master
-  changes = !git diff $(git merge-base HEAD master)
+  changes = !git diff @{upstream}
   shove = !git push origin $(git rev-parse --abbrev-ref HEAD)
+  select = !select branch in $(git branch --format='%(refname:short)')\ndo\ngit checkout $branch\nexit\ndone
 [branch]
    autosetupmerge = always
 [core]

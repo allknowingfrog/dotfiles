@@ -19,6 +19,8 @@ highlight ColorColumn ctermbg=235
 filetype plugin on
 filetype indent on
 
+packloadall
+
 syn sync fromstart
 
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
