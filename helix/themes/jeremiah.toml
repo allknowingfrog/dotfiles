@@ -1,0 +1,14 @@
+inherits = "base16_default"
+
+constructor = "green"
+comment = "gray"
+string = "magenta"
+keyword = "blue"
+"keyword.control" = "yellow"
+operator = "cyan"
+function = "white"
+constant = "red"
+variable = "yellow"
+
+# attribute = "cyan"
+# type = "light-magenta"
