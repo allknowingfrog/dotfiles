@@ -1,6 +1,6 @@
 set -o vi
 
-export VISUAL=vim
+export VISUAL=hx
 export EDITOR="$VISUAL"
 
 function dcx {

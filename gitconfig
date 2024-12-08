@@ -2,10 +2,11 @@
   changes = !git diff @{upstream}
   shove = !git push origin $(git rev-parse --abbrev-ref HEAD)
   select = !select branch in $(git branch --format='%(refname:short)')\ndo\ngit checkout $branch\nexit\ndone
+  refresh = !git checkout master && git fetch -p origin && git pull
 [branch]
    autosetupmerge = always
 [core]
-  editor = vim
+  editor = hx
   excludesfile = ~/.gitignore
 [init]
   defaultBranch = master
@@ -16,3 +17,5 @@
 [user]
   email = jeremiah.bohling@gmail.com
   name = Jeremiah A. Bohling
+[merge]
+  conflictStyle = diff3
